@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ask_lawyer</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/ask_lawyer.css')}}">
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <img src="{{ url_for('static',filename='images/logo.png')}}" alt="KanoonMitra" class="logo">
+
+      <ul>
+        <li><a href="/">🏠 Home |</a></li>
+        <li class="dropdown">
+          <a href="/about">🛠️ Services ▾ |
+          </a>
+          <ul class="dropdown-content">
+            <li><a href="/indexai">🤖 AI Legal Chatbot</a></li>
+          </ul>
+        </li>
+        <li><a href="/lawyer">⚖️ Ask a Lawyer |</a></li>
+        <li><a href="/contact">📞 Contact |</a></li>
+        <li><a href="/login">
+          <img src="{{ url_for('static',filename='images/login.png')}}" alt="" width="10"> Login/Signup
+        </a></li>
+      </ul>
+    </div>
+  </nav>
+    <section class="ask-lawyer-section">
+        <h2>🧑‍⚖️Ask a Lawyer⚖️</h2>
+        <p>Submit your legal question and get expert advice from verified lawyers within 24–48 hours⏱️.</p>
+      
+        <form class="ask-lawyer-form">
+          <label for="category">Select Legal Category⬇️:</label>
+          <select id="category" name="category">
+            <option>Family Law</option>
+            <option>Criminal Law</option>
+            <option>Property Disputes</option>
+            <option>Employment Law</option>
+            <option>Consumer Rights</option>
+            <option>Other</option>
+          </select>
+      
+          <label for="question">Your Question🤔:</label>
+          <textarea id="question" name="question" rows="5" placeholder="Type your legal question here..."></textarea>
+      
+          <label for="email">Your Email📧:</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+      
+          <button type="submit">Submit Question</button>
+        </form>
+      </section>
+      <p class="disclaimer">
+        📌 Note: Our advice is for general guidance only and does not replace professional legal representation.
+      </p>
+      
+      
+</body>
+</html>

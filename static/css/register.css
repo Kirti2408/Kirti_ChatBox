@@ -1,0 +1,163 @@
+
+
+/* Body Styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: black;
+  display: flex;
+  justify-content: center;  /* Centers the content horizontally */
+  align-items: center;      /* Centers the content vertically */
+  min-height: 100vh;        /* Full height of the viewport */
+  margin: 0;                /* Removes any margin around the body */
+  flex-direction: column;   /* Flexbox for vertical alignment */
+}
+
+/* Navigation Styles */
+nav {
+  background-color: black;
+  padding: 10px 20px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.logo {
+  height: 130px;
+  width: auto;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: burlywood;
+  font-size: 18px;
+  padding: 8px 12px;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+}
+
+nav ul li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+nav ul li a:hover {
+  color: black;
+  font-weight: bold;
+  background-color: rgba(255, 248, 220, 0.9);
+  border-radius: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #000;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  z-index: 999;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-content li a {
+  padding: 10px 15px;
+  color: bisque;
+  display: block;
+  font-size: 14px;
+  text-align: left;
+}
+
+.dropdown-content li a:hover {
+  background-color: #f9f5f5;
+  color: #000;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Form Box Styling */
+.form-box.signup-box {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  width: 100%;                /* Makes it responsive */
+  max-width: 400px;           /* Limits the width to 400px */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  z-index: 1;
+  margin: auto;               /* Ensures centering */
+}
+
+/* Form Box Header Styling */
+.form-box h2 {
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+/* Form Input Styling */
+.form-box form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+/* Form Button Styling */
+.form-box form button {
+  width: 100%;
+  padding: 10px;
+  background-color: black;
+  color: burlywood;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-box form button:hover {
+  background-color: burlywood;
+  color: black;
+}
+
+/* Link Text Styling */
+.link-text {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.link-text a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.link-text a:hover {
+  text-decoration: underline;
+}

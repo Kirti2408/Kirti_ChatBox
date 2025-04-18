@@ -1,0 +1,180 @@
+body{
+  background-color: black;
+}
+nav {
+  background-color: black;
+  padding: 10px 20px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.logo {
+  height: 130px;
+  width: auto;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: burlywood;
+  font-size: 18px;
+  padding: 8px 12px;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+}
+
+nav ul li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+nav ul li a:hover {
+  color: black;
+  font-weight: bold;
+  background-color: rgba(255, 248, 220, 0.9);
+  border-radius: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #000;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  z-index: 999;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-content li a {
+  padding: 10px 15px;
+  color: bisque;
+  display: block;
+  font-size: 14px;
+  text-align: left;
+}
+
+.dropdown-content li a:hover {
+  background-color: #f9f5f5;
+  color: #000;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ========== ASK A LAWYER SECTION ========== */
+.ask-lawyer-section {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: #070707;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  color:antiquewhite;
+}
+
+.ask-lawyer-section h2 {
+  font-size: 32px;
+  color:rgb(168, 110, 33);
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.ask-lawyer-section p {
+  text-align: center;
+  font-size: 16px;
+  color: #eceaea;
+  margin-bottom: 30px;
+}
+
+/* Form Styling */
+.ask-lawyer-form label {
+  display: block;
+  font-weight: 500;
+  margin: 15px 0 5px;
+  color: #bb9639;
+}
+
+.ask-lawyer-form select,
+.ask-lawyer-form textarea,
+.ask-lawyer-form input {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  border: 1px solid #cfd8dc;
+  border-radius: 6px;
+  background-color: #bfbebe;
+  transition: border 0.3s ease;
+}
+
+.ask-lawyer-form select:focus,
+.ask-lawyer-form textarea:focus,
+.ask-lawyer-form input:focus {
+  border-color: #070808;
+  outline: none;
+}
+
+/* Submit Button */
+.ask-lawyer-form button {
+  background-color:#bb9639;
+  color: #ffffff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 6px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ask-lawyer-form button:hover {
+  background-color: #755932;
+}
+
+/* Disclaimer */
+.ask-lawyer-section .disclaimer {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #666;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ask-lawyer-section {
+    margin: 30px 15px;
+    padding: 25px;
+  }
+
+  .ask-lawyer-section h2 {
+    font-size: 26px;
+  }
+}
+.disclaimer {
+  font-size: 14px;
+  color: #ccc;
+  margin-top: 20px;
+  text-align: center;
+}

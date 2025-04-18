@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KanoonMitra</title>
+
+  <style>
+    /* Navigation Styles */
+    nav {
+      background-color: black;
+      padding: 10px 20px;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .logo {
+      height: 130px;
+      width: auto;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: burlywood;
+      font-size: 18px;
+      padding: 8px 12px;
+      display: inline-block;
+      transition: all 0.2s ease-in-out;
+    }
+
+    nav ul li:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+    }
+
+    nav ul li a:hover {
+      color: black;
+      font-weight: bold;
+      background-color: rgba(255, 248, 220, 0.9);
+      border-radius: 5px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #000;
+      top: 100%;
+      left: 0;
+      min-width: 200px;
+      z-index: 999;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+    }
+
+    .dropdown-content li a {
+      padding: 10px 15px;
+      color: bisque;
+      display: block;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    .dropdown-content li a:hover {
+      background-color: #f9f5f5;
+      color: #000;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Hero Section */
+    .hero-section {
+     
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 500px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 50px;
+      font-size: 30px;
+    }
+
+    /* Footer Styles */
+    .site-footer {
+      width: 100%;
+      background-color: #1a1a1a;
+      color: #eee;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 40px 60px;
+      max-width: 1200px;
+      margin: auto;
+      border-top: 4px solid #d5ac4d;
+    }
+
+    .footer-about,
+    .footer-links,
+    .footer-contact,
+    .footer-faq {
+      flex: 1 1 250px;
+      margin: 20px;
+    }
+
+    .footer-about h3,
+    .footer-links h4,
+    .footer-contact h4,
+    .faq-title h4 {
+      color: #d5ac4d;
+      margin-bottom: 15px;
+      font-size: 20px;
+      border-bottom: 2px solid #d5ac4d;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-links ul li a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links ul li a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .footer-contact p {
+      margin: 5px 0;
+      color: #ccc;
+    }
+
+    .faq-title {
+      cursor: pointer;
+      transition: color 0.3s ease;
+      font-size: 18px;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .faq-title:hover {
+      color: #ccc;
+    }
+
+    .faq-content {
+      display: none;
+      background-color: #2d2d2d;
+      padding: 15px;
+      margin-top: 10px;
+      border-radius: 10px;
+      font-size: 14px;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .faq-content ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      color: #ddd;
+    }
+
+    .faq-content li {
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    .footer-faq:hover .faq-content {
+      display: block;
+      background-color: #919191;
+    }
+
+    .footer-bottom {
+      background-color: #111;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #999;
+      border-top: 1px solid #333;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-container">
+      <img src="{{ url_for('static',filename='images/logo.png')}}" alt="KanoonMitra" class="logo">
+
+      <ul>
+        <li><a href="/">🏠 Home |</a></li>
+        <li class="dropdown">
+          <a href="/about">🛠️ Services ▾ |
+          </a>
+          <ul class="dropdown-content">
+            <li><a href="/indexai">🤖 AI Legal Chatbot</a></li>
+          </ul>
+        </li>
+        <li><a href="/lawyer">⚖️ Ask a Lawyer |</a></li>
+        <li><a href="/contact">📞 Contact |</a></li>
+        <li><a href="/login">
+          <img src="{{ url_for('static',filename='images/login.png')}}" alt="" width="10"> Login/Signup
+        </a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero-section"  style="background-image: url('{{ url_for('static',filename='images/background.jpg') }}');">
+    <h1>Affordable Legal Help at Your Fingertips</h1>
+    <p>Talk to expert lawyers, get legal advice, and access free resources online.</p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>Online Legal Aid</h3>
+        <p>Providing accessible and affordable legal assistance to everyone, anytime, anywhere.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Ask a Lawyer</a></li>
+          <li><a href="#">Legal Services</a></li>
+          <div class="footer-faq">
+            <div class="faq-dropdown">
+              <div class="faq-title">
+                <h4>FAQ</h4>
+              </div>
+              <div class="faq-content">
+                <ul>
+                  <li><strong>Q:</strong> Is the advice legally binding?<br><strong>A:</strong> No, it's for general guidance only.</li>
+                  <li><strong>Q:</strong> How soon will I get a response?<br><strong>A:</strong> Within 24–48 hours.</li>
+                  <li><strong>Q:</strong> Is my information confidential?<br><strong>A:</strong> Yes, we maintain complete privacy.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>Email: KanoonMitraSupport@gmail.com</p>
+        <p>Phone: +91-9460331098</p>
+        <p>Address: B-123, Legal Street, Delhi, India</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 KanoonMitra. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
